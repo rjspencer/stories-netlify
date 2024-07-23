@@ -1,0 +1,100 @@
+html {
+  --ivory: #fffff5ff;
+  --atomic-tangerine: #ec9468ff;
+  --ash-gray: #b9c7bbff;
+  --midnight-green: #1c3b43ff;
+  --cambridge-blue: #6d948eff;
+  --dark-slate-gray: #265456ff;
+  --dark-slate-gray-2: #24494eff;
+  --midnight-green-2: #1c3c43ff;
+  --ash-gray-2: #a5aa9aff;
+
+  --primary: var(--dark-slate-gray);
+  --primary-dark: var(--dark-slate-gray-2);
+  --secondary: var(--atomic-tangerine);
+  --text-main: #171a18;
+  --text-heading: #242725;
+}
+
+html,
+body {
+  color: var(--text-main);
+  font-family: Didot, "Bodoni MT", "Noto Serif Display", "URW Palladio L", P052,
+    Sylfaen, serif;
+  font-family:
+    Iowan Old Style,
+    Apple Garamond,
+    Baskerville,
+    Times New Roman,
+    Droid Serif,
+    Times,
+    Source Serif Pro,
+    serif,
+    Apple Color Emoji,
+    Segoe UI Emoji,
+    Segoe UI Symbol;
+  font-size: 1rem;
+  line-height: 1.4;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  border-left: 10px solid var(--secondary);
+  padding: 1rem;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: var(--text-heading);
+  font-family: "Patua One", Didot, "Bodoni MT", "Noto Serif Display",
+    "URW Palladio L", P052, Sylfaen, serif;
+  font-weight: 500;
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 1.1;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 3.5rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+h4,
+h5,
+h6 {
+  font-size: 1.2rem;
+}
+
+article {
+  margin: 1rem;
+  max-width: 700px;
+}
+
+a {
+  text-decoration: underline;
+  color: var(--primary-dark);
+
+  &:hover {
+    color: var(--primary);
+  }
+}
+
+ul {
+  list-style-type: none;
+}
+
+li {
+  line-height: 1.6;
+}
