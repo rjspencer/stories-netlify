@@ -1,3 +1,13 @@
+.header {
+  border-bottom: 1px solid var(--primary);
+
+  img {
+    display: none;
+  }
+}
+
 li {
   line-height: 2.4;
 }
+
+

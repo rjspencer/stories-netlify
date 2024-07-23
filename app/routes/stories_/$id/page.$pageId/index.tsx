@@ -1,9 +1,13 @@
-import { LoaderFunctionArgs, json } from "@remix-run/node";
+import { LinksFunction, LoaderFunctionArgs, json } from "@remix-run/node";
 import { Link, useLoaderData } from "@remix-run/react";
 import invariant from "tiny-invariant";
 
 import ContentfulDocument from "~/components/ContentfulDocument";
 import { Pages } from "~/services/contentful";
+
+import styles from "./styles.css?url";
+
+export const links: LinksFunction = () => [{ rel: "stylesheet", href: styles }];
 
 export async function loader({ params }: LoaderFunctionArgs) {
   invariant(params.id, "No story ID provided");
@@ -26,12 +30,12 @@ const StoriesPage: React.FC = () => {
       <h2>{page.title}</h2>
       {page.content ? <ContentfulDocument document={page.content} /> : null}
       <section>
-        <ul>
+        <ul className="choices">
           {page.choice.map(({ fields }) => {
             const id = fields.destination.sys.id;
             return (
               <li key={id}>
-                <Link key={id} to={`/stories/${storyId}/page/${id}`}>
+                <Link key={id} to={`/stories/${storyId}/page/${id}`} className="buttonLink">
                   {fields.title}
                 </Link>
               </li>

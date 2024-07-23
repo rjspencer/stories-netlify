@@ -1,11 +1,12 @@
 html {
-  --ivory: #fffff5ff;
+  --ivory: rgb(251, 255, 245);
+  --red: #d25b77;
   --atomic-tangerine: #ec9468ff;
   --ash-gray: #b9c7bbff;
   --midnight-green: #1c3b43ff;
   --cambridge-blue: #6d948eff;
-  --dark-slate-gray: #265456ff;
-  --dark-slate-gray-2: #24494eff;
+  --dark-slate-gray: rgb(49, 101, 103);
+  --dark-slate-gray-2: rgb(29, 61, 66);
   --midnight-green-2: #1c3c43ff;
   --ash-gray-2: #a5aa9aff;
 
@@ -39,11 +40,12 @@ body {
   width: 100%;
   margin: 0;
   padding: 0;
+  overflow-y: scroll;
 }
 
 body {
   border-left: 10px solid var(--secondary);
-  padding: 1rem;
+  padding: 2rem 1rem;
 }
 
 h1,
@@ -54,17 +56,17 @@ h4 {
   font-family: "Patua One", Didot, "Bodoni MT", "Noto Serif Display",
     "URW Palladio L", P052, Sylfaen, serif;
   font-weight: 500;
-  margin-top: 0;
-  margin-bottom: 0;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
   line-height: 1.1;
 }
 
 h1 {
-  font-size: 2rem;
+  font-size: 1.6rem;
 }
 
 h2 {
-  font-size: 3.5rem;
+  font-size: 2rem;
 }
 
 h3 {
@@ -91,10 +93,54 @@ a {
   }
 }
 
-ul {
-  list-style-type: none;
-}
-
 li {
   line-height: 1.6;
+
+  p {
+    margin: 0;
+  }
+}
+
+img.contentful {
+  max-height: 700px;
+  max-width: 100%;
+  object-fit: contain;
+  padding: 1rem 0;
+}
+
+p:has(code) {
+  margin: 0;
+  background: var(--ivory);
+  border-left: 3px solid var(--cambridge-blue);
+  padding: 0.75rem 1.5em;
+
+  code {
+    color: var(--text-heading);
+    page-break-inside: avoid;
+    font-family: monospace;
+    font-size: 15px;
+    line-height: 1.6;
+    max-width: 100%;
+    overflow: auto;
+    display: block;
+    word-wrap: break-word;
+  }
+}
+
+.buttonLink {
+  padding: 0.75rem 1.5rem;
+  background-color: var(--ivory);
+  /* border-radius: 0.25rem; */
+  border: 1px solid var(--primary-dark);
+  border-left: 5px solid;
+  color: var(--primary-dark);
+  box-shadow: 1px 1px 0  var(--ash-gray);
+  text-decoration: none;
+  transition: all 0.15s;
+
+  &:hover {
+    color: var(--primary);
+    border-color: var(--primary);
+    box-shadow: 3px 2px 0  var(--ash-gray);
+  }
 }

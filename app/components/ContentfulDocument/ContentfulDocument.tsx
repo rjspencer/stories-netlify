@@ -58,15 +58,13 @@ const renderOptions = (config?: RenderOptionsConfig) => {
           asset.fields?.file?.url || "",
           "https://images.ctfassets.net",
         );
-        url.searchParams.set("fit", config?.image.fit || "fill");
-        url.searchParams.set("h", String(config?.image.height || 200));
-        url.searchParams.set("w", String(config?.image.width || 200));
+        url.searchParams.set("h", String(config?.image.height || 900));
+        url.searchParams.set("w", String(config?.image.width || 700));
 
         return (
           <img
             className={`contentful ${config?.image.className || ""}`}
             src={url.toString()}
-            height={200}
             alt={node.data.target.fields.description}
           />
         );
