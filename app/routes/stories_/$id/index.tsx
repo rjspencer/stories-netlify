@@ -27,7 +27,7 @@ const Story: React.FC = () => {
   const { story } = useLoaderData<typeof loader>();
 
   return (
-    <div>
+    <>
       <div className="header">
         <Link to="/stories">Back to stories</Link>
         <h1>{story.title}</h1>
@@ -36,7 +36,7 @@ const Story: React.FC = () => {
       <div>
         <Outlet />
       </div>
-    </div>
+    </>
   );
 };
 

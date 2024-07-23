@@ -7,6 +7,7 @@ import {
 } from "@remix-run/react";
 import { cssBundleHref } from "@remix-run/css-bundle";
 import { LinksFunction } from "@remix-run/node";
+import resetStyles from "~/reset.css?url";
 import stylesheet from "~/index.css?url";
 
 export const links: LinksFunction = () => [
@@ -20,6 +21,7 @@ export const links: LinksFunction = () => [
     rel: "stylesheet",
     href: "https://fonts.googleapis.com/css2?family=Patua+One&display=swap",
   },
+  { rel: "stylesheet", href: resetStyles },
   { rel: "stylesheet", href: stylesheet },
   ...(cssBundleHref ? [{ rel: "stylesheet", href: cssBundleHref }] : []),
 ];

@@ -19,7 +19,7 @@ export default function StoriesPage() {
   const { storyList } = useLoaderData<typeof loader>();
 
   return (
-    <div>
+    <>
       <h1>Stories</h1>
       <ul className="library">
         {storyList.map((story) => (
@@ -31,6 +31,6 @@ export default function StoriesPage() {
           </li>
         ))}
       </ul>
-    </div>
+    </>
   );
 }

@@ -4,7 +4,7 @@ html {
   --atomic-tangerine: #ec9468ff;
   --ash-gray: #b9c7bbff;
   --midnight-green: #1c3b43ff;
-  --cambridge-blue: #6d948eff;
+  --mid-blue: rgb(109, 156, 194);
   --dark-slate-gray: rgb(49, 101, 103);
   --dark-slate-gray-2: rgb(29, 61, 66);
   --midnight-green-2: #1c3c43ff;
@@ -20,32 +20,24 @@ html {
 html,
 body {
   color: var(--text-main);
-  font-family: Didot, "Bodoni MT", "Noto Serif Display", "URW Palladio L", P052,
-    Sylfaen, serif;
-  font-family:
-    Iowan Old Style,
-    Apple Garamond,
-    Baskerville,
-    Times New Roman,
-    Droid Serif,
-    Times,
-    Source Serif Pro,
-    serif,
-    Apple Color Emoji,
-    Segoe UI Emoji,
-    Segoe UI Symbol;
+  font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-weight: 400;
   font-size: 1rem;
   line-height: 1.4;
-  height: 100%;
   width: 100%;
+  min-height: 100%;
   margin: 0;
   padding: 0;
+}
+
+html {
   overflow-y: scroll;
+  border-left: 10px solid var(--secondary);
 }
 
 body {
-  border-left: 10px solid var(--secondary);
-  padding: 2rem 1rem;
+  padding: 1rem 1rem 2rem 1rem;
+  max-width: 700px;
 }
 
 h1,
@@ -56,7 +48,7 @@ h4 {
   font-family: "Patua One", Didot, "Bodoni MT", "Noto Serif Display",
     "URW Palladio L", P052, Sylfaen, serif;
   font-weight: 500;
-  margin-top: 0.5rem;
+  margin-top: 1.25rem;
   margin-bottom: 0.5rem;
   line-height: 1.1;
 }
@@ -108,10 +100,14 @@ img.contentful {
   padding: 1rem 0;
 }
 
+p {
+  margin: 1rem 0;
+}
+
 p:has(code) {
-  margin: 0;
+  margin: 1rem 0;
   background: var(--ivory);
-  border-left: 3px solid var(--cambridge-blue);
+  border-left: 3px solid var(--mid-blue);
   padding: 0.75rem 1.5em;
 
   code {
