@@ -53,21 +53,34 @@ const renderOptions = (config?: RenderOptionsConfig) => {
 
       [BLOCKS.EMBEDDED_ASSET]: (node: Node) => {
         // render the EMBEDDED_ASSET as you need
-        const asset = node.data.target;
-        const url = new URL(
-          asset.fields?.file?.url || "",
-          "https://images.ctfassets.net",
-        );
-        url.searchParams.set("h", String(config?.image.height || 900));
-        url.searchParams.set("w", String(config?.image.width || 700));
+        if (node.data.target.fields.file.contentType.includes("zip")) {
+          return (
+            <a
+              href={node.data.target.fields.file.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="downloadLink"
+            >
+              Download: {node.data.target.fields.file.fileName}
+            </a>
+          );
+        } else if (node.data.target.fields.file.contentType.includes("image")) {
+          const asset = node.data.target;
+          const url = new URL(
+            asset.fields?.file?.url || "",
+            "https://images.ctfassets.net",
+          );
+          url.searchParams.set("h", String(config?.image.height || 900));
+          url.searchParams.set("w", String(config?.image.width || 700));
 
-        return (
-          <img
-            className={`contentful ${config?.image.className || ""}`}
-            src={url.toString()}
-            alt={node.data.target.fields.description}
-          />
-        );
+          return (
+            <img
+              className={`contentful ${config?.image.className || ""}`}
+              src={url.toString()}
+              alt={node.data.target.fields.description}
+            />
+          );
+        }
       },
     },
   };
@@ -78,6 +91,7 @@ type Props = {
   config?: RenderOptionsConfig;
 };
 
+// eslint-disable-next-line react/prop-types
 const ContentfulDocument: React.FC<Props> = ({ document, config }) => {
   if (!document) return null;
   return documentToReactComponents(document, renderOptions(config));

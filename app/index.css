@@ -1,6 +1,7 @@
 html {
   --ivory: rgb(251, 255, 245);
   --red: #d25b77;
+  --dark-red: #a33951;
   --atomic-tangerine: #ec9468ff;
   --ash-gray: #b9c7bbff;
   --midnight-green: #1c3b43ff;
@@ -104,7 +105,12 @@ p {
   margin: 1rem 0;
 }
 
-p:has(code) {
+p code {
+  background-color: var(--ivory);
+  padding: 0.25rem;
+}
+
+pre {
   margin: 1rem 0;
   background: var(--ivory);
   border-left: 3px solid var(--mid-blue);
@@ -114,7 +120,6 @@ p:has(code) {
     color: var(--text-heading);
     page-break-inside: avoid;
     font-family: monospace;
-    font-size: 15px;
     line-height: 1.6;
     max-width: 100%;
     overflow: auto;
@@ -123,7 +128,8 @@ p:has(code) {
   }
 }
 
-.buttonLink {
+.buttonLink, .downloadLink {
+  margin: 1rem 0;
   padding: 0.75rem 1.5rem;
   background-color: var(--ivory);
   /* border-radius: 0.25rem; */
@@ -138,5 +144,15 @@ p:has(code) {
     color: var(--primary);
     border-color: var(--primary);
     box-shadow: 3px 2px 0  var(--ash-gray);
+  }
+}
+
+.downloadLink {
+  display: inline-block;
+  margin: 0.5rem 0;
+  border-color: var(--red);
+
+  &:hover {
+    border-color: var(--dark-red);
   }
 }
