@@ -31,8 +31,18 @@ const renderOptions = (config?: RenderOptionsConfig) => {
       [BLOCKS.EMBEDDED_ENTRY]: (node: Node) => {
         // target the contentType of the EMBEDDED_ENTRY to display as you need
         if (node.data.target.sys.contentType.sys.id === "codeBlock") {
+          if (node.data.target.fields.code.split("\n").length > 5) {
+            return (
+              <details open>
+                <summary>{node.data.target.fields.language?.toUpperCase() || "Code:"}</summary>
+                <pre>
+                  <code>{node.data.target.fields.code}</code>
+                </pre>
+              </details>
+            );
+          }
           return (
-            <pre>
+              <pre>
               <code>{node.data.target.fields.code}</code>
             </pre>
           );
