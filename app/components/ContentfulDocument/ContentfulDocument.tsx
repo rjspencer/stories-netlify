@@ -34,7 +34,9 @@ const renderOptions = (config?: RenderOptionsConfig) => {
           if (node.data.target.fields.code.split("\n").length > 5) {
             return (
               <details open>
-                <summary>{node.data.target.fields.language?.toUpperCase() || "Code:"}</summary>
+                <summary>
+                  {node.data.target.fields.language?.toUpperCase() || "Code:"}
+                </summary>
                 <pre>
                   <code>{node.data.target.fields.code}</code>
                 </pre>
@@ -42,7 +44,7 @@ const renderOptions = (config?: RenderOptionsConfig) => {
             );
           }
           return (
-              <pre>
+            <pre>
               <code>{node.data.target.fields.code}</code>
             </pre>
           );
@@ -80,8 +82,7 @@ const renderOptions = (config?: RenderOptionsConfig) => {
             asset.fields?.file?.url || "",
             "https://images.ctfassets.net",
           );
-          url.searchParams.set("h", String(config?.image.height || 900));
-          url.searchParams.set("w", String(config?.image.width || 700));
+          url.searchParams.set("w", String(config?.image.width || 1400));
 
           return (
             <img

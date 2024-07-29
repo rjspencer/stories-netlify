@@ -35,7 +35,11 @@ const StoriesPage: React.FC = () => {
             const id = fields.destination.sys.id;
             return (
               <li key={id}>
-                <Link key={id} to={`/stories/${storyId}/page/${id}`} className="buttonLink">
+                <Link
+                  key={id}
+                  to={`/stories/${storyId}/page/${id}`}
+                  className="buttonLink"
+                >
                   {fields.title}
                 </Link>
               </li>

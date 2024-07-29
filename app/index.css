@@ -21,7 +21,8 @@ html {
 html,
 body {
   color: var(--text-main);
-  font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-weight: 400;
   font-size: 1rem;
   line-height: 1.4;
@@ -140,7 +141,8 @@ pre {
   }
 }
 
-.buttonLink, .downloadLink {
+.buttonLink,
+.downloadLink {
   margin: 1rem 0;
   padding: 0.75rem 1.5rem;
   background-color: var(--ivory);
@@ -148,15 +150,19 @@ pre {
   border: 1px solid var(--primary-dark);
   border-left: 5px solid;
   color: var(--primary-dark);
-  box-shadow: 1px 1px 0  var(--ash-gray);
+  box-shadow: 1px 1px 0 var(--ash-gray);
   text-decoration: none;
   transition: all 0.15s;
 
   &:hover {
     color: var(--primary);
     border-color: var(--primary);
-    box-shadow: 3px 2px 0  var(--ash-gray);
+    box-shadow: 3px 2px 0 var(--ash-gray);
   }
+}
+
+li .buttonLink {
+  margin: 0;
 }
 
 .downloadLink {
@@ -166,5 +172,25 @@ pre {
 
   &:hover {
     border-color: var(--dark-red);
+  }
+}
+
+.visitor-counter {
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+
+  .visitor-count {
+    display: inline-flex;
+    gap: 0.125rem;
+
+    .digit {
+      font-size: 1rem;
+      font-family: monospace;
+      font-weight: 900;
+      padding: 0.5rem;
+      background-color: var(--dark-slate-gray-2);
+      color: var(--ivory);
+    }
   }
 }
